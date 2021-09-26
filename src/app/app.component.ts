@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testYPCI';
+  extension:string = '';
+
+  onFileSelected(event:any) {
+
+    const file:File = event.target.files[0];
+
+    if (file) {
+
+        this.extension = "l'extension du fichier est " + file.name.split('.').pop();
+        
+    }
+  }
 }
